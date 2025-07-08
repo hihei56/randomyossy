@@ -13,14 +13,14 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Setup SSH Agent
-      uses: webfactory/ssh-agent@v0.8
+      uses: webfactory/ssh-agent@latest
       with:
         ssh-private-key: ${{ secrets.GCE_SSH_PRIVATE_KEY }}
 
     - name: Deploy to GCE
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_HOST }} << 'EOF'
-          cd ~/randomyossy || git clone https://github.com/mzaru963@gmail.com/randomyossy.git
+          cd ~/randomyossy || git clone https://github.com/hihei56/randomyossy.git
           cd ~/randomyossy
           git pull
           npm install
