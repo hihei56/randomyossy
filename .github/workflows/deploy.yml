@@ -12,11 +12,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Setup SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.GCE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
+    - name: Setup SSH Agent
+      uses: webfactory/ssh-agent@v0.8.1
+      with:
+        ssh-private-key: ${{ secrets.GCE_SSH_PRIVATE_KEY }}
 
     - name: Deploy to GCE
       run: |
@@ -28,3 +27,4 @@ jobs:
           pm2 restart yoshito-bot || pm2 start apexrpc.js --name yoshito-bot
           pm2 save
         EOF
+
