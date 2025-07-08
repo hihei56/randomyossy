@@ -1,14 +1,17 @@
 {
-  "name": "discord-bot",
+  "name": "yoshito-discord_bot",
   "version": "1.0.0",
-  "description": "Discord bot for image sharing",
+  "description": "A Discord bot for sending random images",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^14.15.3",
-    "dotenv": "^16.4.5",
-    "axios": "^1.7.7"
+    "discord.js": "^14.6.0",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.x"
   }
 }
