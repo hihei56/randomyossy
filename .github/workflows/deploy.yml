@@ -20,7 +20,7 @@ jobs:
     - name: Deploy to GCE
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.GCE_USER }}@${{ secrets.GCE_HOST }} << 'EOF'
-          cd ~/randomyossy || git clone https://github.com/<あなたのGitHubユーザー名>/randomyossy.git
+          cd ~/randomyossy || git clone https://github.com/mzaru963@gmail.com/randomyossy.git
           cd ~/randomyossy
           git pull
           npm install
